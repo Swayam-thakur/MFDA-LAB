@@ -1,0 +1,21 @@
+mu <- 10000           
+xbar <- 9900    
+sigma <- 120          
+n <- 30                
+alpha <- 0.05   
+
+se <- sigma / sqrt(n)
+
+z <- (xbar - mu) / se
+
+p_value <- pnorm(z)
+
+if (p_value < 0.5) {
+  conclusion <- "Reject the null hypothesis: Evidence suggests the mean lifetime is less than 10,000 hours."
+} else {
+  conclusion <- "Fail to reject the null hypothesis: Not enough evidence to say the mean lifetime is less than 10,000 hours."
+}
+
+cat("Z_value:", z, "\n")
+cat("Critical P-value:", p_value, "\n")
+cat("Conclusion:", conclusion, "\n")
